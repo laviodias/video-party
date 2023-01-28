@@ -109,7 +109,7 @@ export default function Room({ url, author, room, title }: IProps) {
 export async function getServerSideProps(context: any) {
   const { id } = context.query;
 
-  const res = await fetch(`http://localhost:3000/api/database?id=${id}`);
+  const res = await fetch(`${process.env.BASE_URL}/api/database?id=${id}`);
   if (!res.ok) {
     return {
       props: {
