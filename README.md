@@ -10,7 +10,7 @@ A aplicação é responsiva, então você também pode acessá-la do seu smartph
 
 A aplicação pode ser acessada em produção [neste link](https://video-party-iota.vercel.app/)
 
-O Banco de Dados escolhido foi o (Airtable)[https://www.airtable.com] e o gerenciamento do servidor é feito também no NextJS.
+O Banco de Dados escolhido foi o [Airtable](https://www.airtable.com) e o gerenciamento do servidor é feito também no NextJS.
 
 Caso deseje rodar o projeto localmente, siga os passos seguintes:
 
