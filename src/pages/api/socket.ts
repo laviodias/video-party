@@ -11,18 +11,26 @@ export default function SocketHandler(req, res) {
 
   io.on("connection", (socket: Socket) => {
     console.log("New connection", socket.id);
+
     socket.on("send_message", (data) => {
       socket.to(data.room).emit("receive_message", data);
     });
+
     socket.on("leave_room", (data) => {
       socket.leave(data);
-      /* socket.to(data).emit("total_users", io.in(data).adapter.sids.size - 1); */
+      io.in(data).allSockets().then((result) => {
+        socket.to(data).emit("total_users", result.size);
+      });
     });
 
     socket.on("join_room", (data) => {
       socket.join(data);
-      /* socket.to(data).emit("total_users", io.in(data).adapter.sids.size); */
+       io.in(data).allSockets().then((result) => {
+        socket.to(data).emit("total_users", result.size);
+        socket.emit("total_users", result.size);
+      });
     });
+
   });
 
   res.end();
