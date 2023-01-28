@@ -22,15 +22,28 @@ async function deleteRoom(id: string) {
       id,
     }),
   });
-  console.log("res", res);
   window.open("/", "_self");
 }
 
 export default function Room({ url, author, room, title }: IProps) {
   const [error, setError] = useState(false);
+  const [playerWidth, setPlayerWidth] = useState<string | number>(0);
   const { user } = useUser();
 
-  if (url == "") return <RoomNotFound />
+  useEffect(() => {
+    setPlayerWidth(window.innerWidth > 800 ? "600px" : "90vw");
+    window.addEventListener("resize", () => {
+      setPlayerWidth(window.innerWidth > 800 ? "600px" : "90vw");
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        setPlayerWidth(window.innerWidth > 800 ? "600px" : "90vw");
+      });
+    };
+  }, []);
+
+  if (url == "") return <RoomNotFound />;
 
   return (
     <>
@@ -54,15 +67,19 @@ export default function Room({ url, author, room, title }: IProps) {
             width: "100%",
           }}
         >
-          <button onClick={() => {
-            navigator.clipboard.writeText(window.location.href);
-            alert("Link copiado para a área de transferência");
-          }}>Compartilhar sala</button>
+          <button
+            onClick={() => {
+              navigator.clipboard.writeText(window.location.href);
+              alert("Link copiado para a área de transferência");
+            }}
+          >
+            Compartilhar sala
+          </button>
           {author === user && (
             <button onClick={() => deleteRoom(room)}>Excluir sala</button>
           )}
         </div>
-        <h1 style={{ margin: "5rem" }}>
+        <h1 style={{ margin: "3rem 2rem" }}>
           {title} - por {author}
         </h1>
         <div
@@ -70,6 +87,7 @@ export default function Room({ url, author, room, title }: IProps) {
             display: "flex",
             justifyContent: "center",
             gap: "2rem",
+            flexWrap: "wrap",
           }}
         >
           {error ? (
@@ -97,7 +115,11 @@ export default function Room({ url, author, room, title }: IProps) {
               </button>
             </div>
           ) : (
-            <ReactPlayer url={url} onError={() => setError(true)} />
+            <ReactPlayer
+              width={playerWidth}
+              url={url}
+              onError={() => setError(true)}
+            />
           )}
           <Chat room={room} />
         </div>

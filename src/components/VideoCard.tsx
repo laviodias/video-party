@@ -19,9 +19,12 @@ export default function VideoCard({ url, id, title }: IFields) {
     if (user) {
       window.open(`/room/${id}`, "_self");
     } else {
+      window.scrollTo(0, 0);
+      window.document.body.style.overflow = "hidden";      
       setModalLoginOpen(true);
       setModalLoginCallback(() => {
         return () => {
+          window.document.body.style.overflow = "auto";
           window.open(`/room/${id}`, "_self");
         };
       });
