@@ -2,7 +2,6 @@ import { Server, Socket } from "socket.io";
 
 export default function SocketHandler(req, res) {
   if (res.socket.server.io) {
-    console.log("Already set up");
     res.end();
     return;
   }
@@ -12,7 +11,6 @@ export default function SocketHandler(req, res) {
 
   io.on("connection", (socket: Socket) => {
     console.log("New connection", socket.id);
-
     socket.on("send_message", (data) => {
       socket.to(data.room).emit("receive_message", data);
     });
@@ -27,6 +25,5 @@ export default function SocketHandler(req, res) {
     });
   });
 
-  console.log("Setting up socket");
   res.end();
 }
