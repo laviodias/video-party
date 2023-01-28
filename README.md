@@ -1,6 +1,8 @@
 Este projeto criado com NextJS e Typescript tem por objetivo permitir que pessoas criem salas para assistirem videos com amigos. Para facilitar a interação, existe um chat em cada sala. É possível criar uma nova sala ou se juntar a uma existente.
 
-Ao criar uma sala, é preciso informar uma URL para o vídeo que será exibido, bem como seu nome e um título para a sala.
+Ao criar uma sala, é preciso informar uma URL para o vídeo que será exibido, bem como seu nome (se não estiver logado ainda) e um título para a sala.
+
+Observe que o "login" é apenas informar o seu nome. Nesta primeira versão, não há ainda um sistema de autenticaç
 
 Para conversar no chat também é preciso informar o seu nome. A implementação do chat foi feita com o uso de Socket.io. Há também um contador de usuários ativos naquela sala.
 
