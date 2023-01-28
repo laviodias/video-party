@@ -2,7 +2,9 @@ Este projeto criado com NextJS e Typescript tem por objetivo permitir que pessoa
 
 Ao criar uma sala, é preciso informar uma URL para o vídeo que será exibido, bem como seu nome e um título para a sala.
 
-Para conversar no chat também é preciso informar o seu nome.
+Para conversar no chat também é preciso informar o seu nome. A implementação do chat foi feita com o uso de Socket.io. Há também um contador de usuários ativos naquela sala.
+
+A aplicação é responsiva, então você também pode acessá-la do seu smartphone!
 
 A aplicação pode ser acessada em produção [neste link](https://video-party-iota.vercel.app/)
 
@@ -32,4 +34,7 @@ Se necessário, entre em contato comigo para que eu possa fornecer uma chave de 
 Caso queira criar por conta própria, aqui estão as colunas utilizadas pelo banco de dados:
 ![image](https://user-images.githubusercontent.com/44332001/215239735-45e3b5fc-75fc-41d6-976f-dd85d806751a.png)
 
+Print das telas:
+![image](https://user-images.githubusercontent.com/44332001/215266455-e36276ad-c4bb-4e2a-bc39-245d48f8631d.png)
+![image](https://user-images.githubusercontent.com/44332001/215266469-6c8fda9b-698d-43c0-8e5a-da256766d2e6.png)
 
