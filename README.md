@@ -18,9 +18,9 @@ Caso deseje rodar o projeto localmente, siga os passos seguintes:
   yarn install
   ```
 
-Abra [http://localhost:3000](http://localhost:3000) em seu navegador para ver o resultado.
+ 3. Abra [http://localhost:3000](http://localhost:3000) em seu navegador para ver o resultado.
 
-Para que o Banco de Dados possa funcionar corretamente, é preciso configurar algumas variáveis de ambiente:
+ 4. Para que o Banco de Dados possa funcionar corretamente, é preciso configurar algumas variáveis de ambiente:
 ```
 AIRTABLE_API_KEY=
 AIRTABLE_BASE_ID=
