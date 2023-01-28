@@ -14,7 +14,7 @@ type Message = {
 export default function Chat({ room }: { room: string }) {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Array<Message>>([]);
-  const [totalUsers, setTotalUsers] = useState(1);
+  /* const [totalUsers, setTotalUsers] = useState(1); */
   const { user, setModalLoginOpen, modalLoginOpen } = useUser();
 
   useEffect(() => {
@@ -37,9 +37,9 @@ export default function Chat({ room }: { room: string }) {
       setMessages((prev) => [...prev, msg]);
     });
 
-    socket.on("total_users", (total: number) => {
+    /* socket.on("total_users", (total: number) => {
       setTotalUsers(total);
-    });
+    }); */
   };
 
   return (
@@ -65,7 +65,7 @@ export default function Chat({ room }: { room: string }) {
           flexDirection: "column",
         }}
       >
-        {totalUsers > 0 && (
+        {/* {totalUsers > 0 && (
           <h3
             style={{
               textAlign: "right",
@@ -76,7 +76,7 @@ export default function Chat({ room }: { room: string }) {
           >
             {totalUsers} usuário{totalUsers > 1 ? "s" : ""}
           </h3>
-        )}
+        )} */}
         {messages.map((msg: Message, index: number) => (
           <Message key={index} isSelf={msg.author === user} {...msg} />
         ))}
