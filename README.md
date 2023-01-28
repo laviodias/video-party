@@ -22,9 +22,15 @@ Caso deseje rodar o projeto localmente, siga os passos seguintes:
   yarn install
   ```
 
- 3. Abra [http://localhost:3000](http://localhost:3000) em seu navegador para ver o resultado.
+ 3. Rode o projeto com
+ ```
+ npm run dev
+ # ou
+ yarn dev
+ ```
+ 4. Abra [http://localhost:3000](http://localhost:3000) em seu navegador para ver o resultado.
 
- 4. Para que o Banco de Dados possa funcionar corretamente, é preciso configurar algumas variáveis de ambiente:
+ 5. Para que o Banco de Dados possa funcionar corretamente, é preciso configurar algumas variáveis de ambiente:
 ```
 AIRTABLE_API_KEY=
 AIRTABLE_BASE_ID=
@@ -40,3 +46,6 @@ Print das telas:
 ![image](https://user-images.githubusercontent.com/44332001/215266455-e36276ad-c4bb-4e2a-bc39-245d48f8631d.png)
 ![image](https://user-images.githubusercontent.com/44332001/215266469-6c8fda9b-698d-43c0-8e5a-da256766d2e6.png)
 
+
+### Contato
+[Linkedin](https://www.linkedin.com/in/laviovale/)
