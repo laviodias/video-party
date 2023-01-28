@@ -105,7 +105,7 @@ export default function Chat({ room }: { room: string }) {
             }
             value={message}
             onKeyDown={(e: any) => {
-              if (e.key === "Enter") {
+              if (message !== "" && e.key === "Enter") {
                 socket.emit("send_message", {
                   text: e.target.value,
                   room,
